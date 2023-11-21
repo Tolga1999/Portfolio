@@ -13,6 +13,7 @@
         padding-top: 1.5em;
         padding-bottom: 1em;
         border-bottom: 3px solid var(--c-border-bottom);
+        width: 100%;
     }
 
     nav{

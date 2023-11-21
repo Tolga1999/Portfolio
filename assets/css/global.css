@@ -19,15 +19,21 @@
 } */
 
 body{
-    margin: 1.5em 0.75em;
-    margin-top: 0;
+    margin: 0 0.75em;
     background-color: var(--c-background);
+}
+
+h1,h2{
+    line-height: 70px;
+    font-weight: 500;
 }
 
 h1{
     font-size: 4.25em;
-    font-weight: 500;
-    line-height: 70px;
+}
+
+h2{
+    font-size: 3.5em;
 }
 
 p{
