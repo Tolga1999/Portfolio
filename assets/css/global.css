@@ -4,18 +4,36 @@
 :root {
     /* body */
     --c-background: rgb(244, 241, 236);
+    --c-border-bottom: rgb(0,0,0);
+    --c-text: rgb(0,0,0);
 }
 
 *{
-    padding: 0;
     margin: 0;
+    padding: 0;
     font-family: 'Montserrat', sans-serif;
 }
 
+/* html,body{
+    height: 100%;
+} */
+
 body{
+    margin: 1.5em 0.75em;
+    margin-top: 0;
     background-color: var(--c-background);
 }
 
 h1{
-
+    font-size: 4.25em;
+    font-weight: 500;
+    line-height: 70px;
 }
+
+p{
+    font-size: 1em;
+    font-weight: 400;
+    line-height: 35px;
+}
+
+
