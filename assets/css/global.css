@@ -37,10 +37,16 @@ h2{
     line-height: 70px;
 }
 
+h3{
+    font-size: 1.5em;
+    font-weight: 600;
+    margin-bottom: 4em;
+}
+
 p{
     font-size: 1em;
-    font-weight: 400;
-    line-height: 35px;
+    font-weight: 500;
+    line-height: 28px;
 }
 
 
