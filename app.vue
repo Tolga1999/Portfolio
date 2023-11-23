@@ -20,7 +20,7 @@ export default {
     })
 
     // tl sets
-    tl.set(".scroll-down", {
+    tl.set(".scroll-down-homescreen", {
       opacity: 1,
     })
 
@@ -31,7 +31,6 @@ export default {
 
     tl.set(".hr-first", {
       width: "0",
-      // x: "-100px",
       opacity: 0,
     })
 
@@ -48,7 +47,7 @@ export default {
 
     tl.set(".hr-second", {
       width: "0",
-      // x: "-100px",
+      opacity: 0,
     })
 
     tl.set(".contact-me-h3", {
@@ -73,7 +72,7 @@ export default {
     })
 
     // tl to's
-    tl.to(".scroll-down", {
+    tl.to(".scroll-down-homescreen", {
       opacity: 0,
       delay: 2.5,
     })
@@ -85,7 +84,6 @@ export default {
 
     tl.to(".hr-first", {
       width: "100%",
-      // x: 0,
       opacity: 1,
     })
 
@@ -101,7 +99,7 @@ export default {
 
     tl.to(".hr-second", {
       width: "100%",
-      // x: 0,
+      opacity: 1,
     })
 
     tl.to(".contact-me-h3", {
@@ -128,74 +126,79 @@ export default {
 </script>
 
 <template>
-  <!-- <div class="scroller"> -->
-    <!-- first snap section -->
-    <section class="first section circle-h1-container">
-      <AppHeader />
-      <img class="circle-svg-1" src="/svg/circle1.svg" alt="homescreen circle">
-      <h1>Frontend Developer</h1>
+  <!-- first section -->
+  <section class="first-section circle-h1-container">
+    <AppHeader />
+    <img class="circle-svg-1" src="/svg/circle1.svg" alt="homescreen circle">
+    <h1>Frontend Developer</h1>
 
+    <div class="scroll-down scroll-down-homescreen">
+      <img src="/svg/arrow-right-down.svg" alt="arrow right down">
+      <span class="scroll-down-text">Scroll down</span>
+    </div>
+  </section>
+
+  <!-- second section -->
+  <section class="second-section">
+    <h2>Creator, Coder and Designer.</h2>
+    <hr class="hr-first">
+
+    <article class="introduction-container">
+      <h3 class="introduction-h3">Introduction</h3>
+
+      <div class="introduction-p">
+        <p>
+          Hello! My name is Tolga, I’m 24 years old and I like to design projects in Vue.js, Sveltekit and Nuxt.js.
+        </p>
+        <p>
+          I’m a student at the Amsterdam University of Applied Sciences, in my last year and can’t wait to enter the
+          real
+          world of web design and development!
+        </p>
+      </div>
+    </article>
+
+    <hr class="hr-second">
+    <article class="contact-me-container">
+      <h3 class="contact-me-h3">Contact me</h3>
+
+      <div class="logos">
+        <img class="linkedin-svg" src="svg/linkedin.svg" alt="linkedin logo">
+        <img class="twitter-svg" src="svg/twitter.svg" alt="twitter logo">
+        <img class="instagram-svg" src="svg/instagram.svg" alt="instagram logo">
+      </div>
+    </article>
+  </section>
+
+  <!-- third section -->
+  <section class="third-section">
+    <div class="projects-svg-container">
+      <h2 class="worked-projects-h2">Projects that I've worked on.</h2>
+      <img class="second-circle-svg" src="/svg/circle2.svg" alt="second cirlce">
+    </div>
+
+    <div class="scroll-down-projects-container">
+      <NuxtLink class="github-link" to="https://github.com/Tolga1999">Tolga1999  <img src="/svg/github.svg" alt="github logo"></NuxtLink>
       <div class="scroll-down">
         <img src="/svg/arrow-right-down.svg" alt="arrow right down">
         <span class="scroll-down-text">Scroll down</span>
       </div>
-    </section>
-
-    <!-- second snap section -->
-    <section class="second-section">
-      <h2>Creator, Coder and Designer.</h2>
-      <hr class="hr-first">
-
-      <article class="introduction-container">
-        <h3 class="introduction-h3">Introduction</h3>
-
-        <div class="introduction-p">
-          <p>
-            Hello! My name is Tolga, I’m 24 years old and I like to design projects in Vue.js, Sveltekit and Nuxt.js.
-          </p>
-          <p>
-            I’m a student at the Amsterdam University of Applied Sciences, in my last year and can’t wait to enter the
-            real
-            world of web design and development!
-          </p>
-        </div>
-      </article>
-
-      <hr class="hr-second">
-      <article class="contact-me-container">
-        <h3 class="contact-me-h3">Contact me</h3>
-
-        <div class="logos">
-          <img class="linkedin-svg" src="svg/linkedin.svg" alt="linkedin logo">
-          <img class="twitter-svg" src="svg/twitter.svg" alt="twitter logo">
-          <img class="instagram-svg" src="svg/instagram.svg" alt="instagram logo">
-        </div>
-      </article>
-    </section>
-
-    <!-- third snap section -->
-    <section>
-      <h2>Projects that I've worked on.</h2>
-    </section>
-
-  <!-- </div> -->
+    </div>
+  </section>
 </template>
 
 <style>
-/* snap scroll */
-/* .scroller { */
-  /* max-height: 100vh; */
-  /* overflow-y: scroll;
-  scroll-snap-type: y mandatory;
-  scroll-snap-points-y: repeat(5rem);
-} */
-
 section {
   height: 100vh;
-  scroll-snap-align: start;
 }
 
-/* snap scroll end */
+.second-section,
+.third-section {
+  padding-top: 1.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
 .circle-h1-container {
   display: flex;
@@ -219,29 +222,23 @@ h1 {
 .scroll-down {
   display: flex;
   align-items: center;
+  gap: 0.3em;
   align-self: flex-end;
   margin: 1.5em 0.75em;
 }
 
 .scroll-down-text {
   font-size: 1.25em;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 /* second section */
-.second-section {
-  padding-top: 0.5em;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
 h2 {
   padding-bottom: 0.5em;
   /* border-bottom: 3px solid var(--c-border-bottom); */
 }
 
-hr{
+hr {
   border: 2px solid var(--c-border-bottom);
 }
 
@@ -277,4 +274,38 @@ p {
 }
 
 /* second section end */
+
+/* third section */
+.projects-svg-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.worked-projects-h2 {
+  padding-bottom: 0;
+}
+
+.second-circle-svg {
+  width: 70%;
+  margin-top: 5em;
+}
+
+.github-link {
+  display: flex;
+  align-items: center;
+  gap: 0.3em;
+  text-decoration: none;
+  color: var(--c-text);
+  font-weight: 600;
+  font-size: 1.25em;
+}
+
+.scroll-down-projects-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* third section */
 </style>
