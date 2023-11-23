@@ -8,15 +8,29 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 export default {
   mounted() {
-    gsap.fromTo("h1", { opacity: 0, yPercent: 100 }, { opacity: 1, yPercent: 0, duration: 0.5, delay: 1.5})
-    gsap.fromTo(".circle-svg-1", { opacity: 0, yPercent: 50 }, { opacity: 1, yPercent: 0, duration: 1, delay: 2})
+    gsap.fromTo("h1", { opacity: 0, yPercent: 100 }, { opacity: 1, yPercent: 0, duration: 0.5, delay: 1.5 })
+    gsap.fromTo(".circle-svg-1", { opacity: 0, yPercent: 50 }, { opacity: 1, yPercent: 0, duration: 1, delay: 2 })
+    gsap.fromTo(".scroll-down", { opacity: 0, yPercent: 100 }, { opacity: 1, yPercent: 0, duration: 1, delay: 3 })
 
     let tl = gsap.timeline({
       scrollTrigger: {
         trigger: ".creator-coder-h2",
-        end: "1800 60%",
+        // end: "1800 60%",
+        start: "top bottom",
+        end: "bottom 30%",
         // markers: true,
         // scrub: 5,
+        scrub: 5,
+      },
+    })
+
+    let tl2 = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".worked-projects-h2",
+        // end: "1800 60%",
+        start: "top bottom",
+        end: "bottom 25%",
+        markers: true,
         scrub: 5,
       },
     })
@@ -73,23 +87,23 @@ export default {
       yPercent: 100,
     })
 
-    tl.set(".worked-projects-h2", {
+    tl2.set(".worked-projects-h2", {
       opacity: 0,
       yPercent: 100,
     })
 
-    tl.set(".second-circle-svg", {
+    tl2.set(".second-circle-svg", {
       scale: 0.9,
       opacity: 0
     })
 
     // github and scroll down - projects
-    tl.set(".github-link", {
+    tl2.set(".github-link", {
       opacity: 0,
       yPercent: 100,
     })
 
-    tl.set(".scroll-down-projects", {
+    tl2.set(".scroll-down-projects", {
       opacity: 0,
       yPercent: 100,
     })
@@ -145,23 +159,28 @@ export default {
       yPercent: 0,
     })
 
-    tl.to(".worked-projects-h2", {
-      opacity: 1,
-      yPercent: 0,
+    tl2.to(".logos", {
+      opacity: 0,
     })
 
-    tl.to(".second-circle-svg", {
+    tl2.to(".worked-projects-h2", {
+      opacity: 1,
+      yPercent: 0,
+      // delay: 2,
+    })
+
+    tl2.to(".second-circle-svg", {
       scale: 1.3,
       opacity: 1,
     })
 
-        // github and scroll down - projects
-    tl.to(".github-link", {
+    // github and scroll down - projects
+    tl2.to(".github-link", {
       opacity: 1,
       yPercent: 0,
     })
 
-    tl.to(".scroll-down-projects", {
+    tl2.to(".scroll-down-projects", {
       opacity: 1,
       yPercent: 0,
     })
@@ -222,7 +241,8 @@ export default {
     </div>
 
     <div class="scroll-down-projects-container">
-      <NuxtLink class="github-link" to="https://github.com/Tolga1999">Tolga1999  <img src="/svg/github.svg" alt="github logo"></NuxtLink>
+      <NuxtLink class="github-link" to="https://github.com/Tolga1999">Tolga1999 <img src="/svg/github.svg"
+          alt="github logo"></NuxtLink>
       <div class="scroll-down scroll-down-projects">
         <img src="/svg/arrow-right-down.svg" alt="arrow right down">
         <span class="scroll-down-text">Scroll down</span>
@@ -322,7 +342,7 @@ p {
 /* second section end */
 
 /* third section */
-.projects-svg-container{
+.projects-svg-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -347,7 +367,7 @@ p {
   font-size: 1.25em;
 }
 
-.scroll-down-projects-container{
+.scroll-down-projects-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
