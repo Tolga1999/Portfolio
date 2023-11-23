@@ -8,13 +8,15 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 export default {
   mounted() {
-    gsap.fromTo("h1", { opacity: 0 }, { opacity: 1, duration: 1 })
+    gsap.fromTo("h1", { opacity: 0, yPercent: 100 }, { opacity: 1, yPercent: 0, duration: 0.5, delay: 1.5})
+    gsap.fromTo(".circle-svg-1", { opacity: 0, yPercent: 50 }, { opacity: 1, yPercent: 0, duration: 1, delay: 2})
 
     let tl = gsap.timeline({
       scrollTrigger: {
-        trigger: "h2",
-        end: "900 60%",
+        trigger: ".creator-coder-h2",
+        end: "1800 60%",
         // markers: true,
+        // scrub: 5,
         scrub: 5,
       },
     })
@@ -24,7 +26,7 @@ export default {
       opacity: 1,
     })
 
-    tl.set("h2", {
+    tl.set(".creator-coder-h2", {
       opacity: 0,
       yPercent: 100,
     })
@@ -71,13 +73,34 @@ export default {
       yPercent: 100,
     })
 
+    tl.set(".worked-projects-h2", {
+      opacity: 0,
+      yPercent: 100,
+    })
+
+    tl.set(".second-circle-svg", {
+      scale: 0.9,
+      opacity: 0
+    })
+
+    // github and scroll down - projects
+    tl.set(".github-link", {
+      opacity: 0,
+      yPercent: 100,
+    })
+
+    tl.set(".scroll-down-projects", {
+      opacity: 0,
+      yPercent: 100,
+    })
+
     // tl to's
     tl.to(".scroll-down-homescreen", {
       opacity: 0,
       delay: 2.5,
     })
 
-    tl.to("h2", {
+    tl.to(".creator-coder-h2", {
       opacity: 1,
       yPercent: 0,
     })
@@ -121,6 +144,27 @@ export default {
       opacity: 1,
       yPercent: 0,
     })
+
+    tl.to(".worked-projects-h2", {
+      opacity: 1,
+      yPercent: 0,
+    })
+
+    tl.to(".second-circle-svg", {
+      scale: 1.3,
+      opacity: 1,
+    })
+
+        // github and scroll down - projects
+    tl.to(".github-link", {
+      opacity: 1,
+      yPercent: 0,
+    })
+
+    tl.to(".scroll-down-projects", {
+      opacity: 1,
+      yPercent: 0,
+    })
   }
 }
 </script>
@@ -140,7 +184,7 @@ export default {
 
   <!-- second section -->
   <section class="second-section">
-    <h2>Creator, Coder and Designer.</h2>
+    <h2 class="creator-coder-h2">Creator, Coder and Designer.</h2>
     <hr class="hr-first">
 
     <article class="introduction-container">
@@ -179,7 +223,7 @@ export default {
 
     <div class="scroll-down-projects-container">
       <NuxtLink class="github-link" to="https://github.com/Tolga1999">Tolga1999  <img src="/svg/github.svg" alt="github logo"></NuxtLink>
-      <div class="scroll-down">
+      <div class="scroll-down scroll-down-projects">
         <img src="/svg/arrow-right-down.svg" alt="arrow right down">
         <span class="scroll-down-text">Scroll down</span>
       </div>
