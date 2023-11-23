@@ -185,6 +185,8 @@ export default {
       </div>
     </div>
   </section>
+
+  <Project />
 </template>
 
 <style>
