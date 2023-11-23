@@ -31,7 +31,7 @@ export default {
         start: "top bottom",
         end: "bottom 25%",
         // markers: true,
-        scrub: 5,
+        scrub: 7,
       },
     })
 

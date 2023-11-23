@@ -13,7 +13,7 @@ export default {
                 trigger: ".h3-project",
                 start: "top bottom",
                 end: "bottom 10%",
-                markers: true,
+                // markers: true,
                 scrub: 5,
             },
         })
@@ -48,7 +48,7 @@ export default {
         tl2.to(".scroll-down-projects-container", {
             opacity: 0
         })
-        
+
         tl2.to(".h3-project", {
             opacity: 1,
             yPercent: 0,
