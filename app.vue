@@ -30,7 +30,7 @@ export default {
         // end: "1800 60%",
         start: "top bottom",
         end: "bottom 25%",
-        markers: true,
+        // markers: true,
         scrub: 5,
       },
     })

@@ -11,9 +11,9 @@ export default {
         let tl2 = gsap.timeline({
             scrollTrigger: {
                 trigger: ".h3-project",
-                start: "top 70%",
+                start: "top bottom",
                 end: "bottom 10%",
-                // markers: true,
+                markers: true,
                 scrub: 5,
             },
         })
@@ -21,7 +21,7 @@ export default {
         // tl sets
         tl2.set(".h3-project", {
             opacity: 0,
-            yPercent: 100,
+            yPercent: 500,
         })
 
         tl2.set(".img-project", {
@@ -45,6 +45,10 @@ export default {
         })
 
         // tl to's
+        tl2.to(".scroll-down-projects-container", {
+            opacity: 0
+        })
+        
         tl2.to(".h3-project", {
             opacity: 1,
             yPercent: 0,
