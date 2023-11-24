@@ -15,11 +15,9 @@ export default {
     let tl = gsap.timeline({
       scrollTrigger: {
         trigger: ".creator-coder-h2",
-        // end: "1800 60%",
         start: "top bottom",
-        end: "bottom 30%",
+        end: "250 30%",
         // markers: true,
-        // scrub: 5,
         scrub: 5,
       },
     })
@@ -27,7 +25,6 @@ export default {
     let tl2 = gsap.timeline({
       scrollTrigger: {
         trigger: ".worked-projects-h2",
-        // end: "1800 60%",
         start: "top bottom",
         end: "bottom 25%",
         // markers: true,
@@ -161,12 +158,12 @@ export default {
 
     tl2.to(".logos", {
       opacity: 0,
+      duration: 3,
     })
 
     tl2.to(".worked-projects-h2", {
       opacity: 1,
       yPercent: 0,
-      // delay: 2,
     })
 
     tl2.to(".second-circle-svg", {
@@ -184,6 +181,7 @@ export default {
       opacity: 1,
       yPercent: 0,
     })
+
   }
 }
 </script>
@@ -250,7 +248,17 @@ export default {
     </div>
   </section>
 
-  <Project />
+  <Project :nameProject="'Vervoerregio Amsterdam'" :imgUrl="'/img/devices-mockup-toolgankelijkheid.png'"
+    :projectText="'Project for Vervoerregio Amsterdam focusing on WCAG guidelines and the specific check ups between their partners.'"
+    :seeMore="'https://github.com/WesleySchorel/lose-your-head-the-client-case'" />
+
+    <Project :nameProject="'Schiphol Dashboard'" :imgUrl="'/img/devices-mockup-schiphol.png'"
+    :projectText="'Project for Vervoerregio Amsterdam focusing on WCAG guidelines and the specific check ups between their partners.'"
+    :seeMore="'https://github.com/Tolga1999/proof-of-concept'" />
+
+    <Project :nameProject="'Groovy Search'" :imgUrl="'/img/iPhone15pro.png'"
+    :projectText="'Project for Vervoerregio Amsterdam focusing on WCAG guidelines and the specific check ups between their partners.'"
+    :seeMore="'https://github.com/Tolga1999/your-tribe-for-life-squad-page'" />
 </template>
 
 <style>
@@ -354,6 +362,7 @@ p {
 
 .second-circle-svg {
   width: 70%;
+  max-width: 20em;
   margin-top: 5em;
 }
 
@@ -373,5 +382,47 @@ p {
   align-items: center;
 }
 
-/* third section */
+@media (min-width: 725px) {
+  h1{
+    font-size: 6em;
+  }
+
+  h2{
+    font-size: 4em;
+  }
+  
+  .circle-svg-1{
+    scale: 1.1;
+  }
+  h1{
+    align-self: flex-start;
+    width: 50%;
+    line-height: 1em ;
+    transform: translateY(-2em);
+  }
+
+  .scroll-down-homescreen{
+    transform: translateY(-14em);
+  }
+
+  .creator-coder-h2{
+    padding-top: 3em;
+  }
+
+  .introduction-p p{
+    line-height: 1.5em;
+    width: 50%;
+  }
+
+  /* second section */
+  .worked-projects-h2{
+    align-self: flex-start;
+    width: 50%;
+  }
+
+  .second-circle-svg{
+    display: none;
+  }
+
+}
 </style>
