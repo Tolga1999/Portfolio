@@ -209,7 +209,7 @@ export default {
 
       <div class="introduction-p">
         <p>
-          Hello! My name is Tolga, I’m 24 years old and I like to design projects in Vue.js, Sveltekit and Nuxt.js.
+          Hello! My name is Tolga, I’m 24 years old and I like to design and code projects in Vue.js, Sveltekit and Nuxt.js.
         </p>
         <p>
           I’m a student at the Amsterdam University of Applied Sciences, in my last year and can’t wait to enter the
@@ -250,15 +250,18 @@ export default {
 
   <Project :nameProject="'Vervoerregio Amsterdam'" :imgUrl="'/img/devices-mockup-toolgankelijkheid.png'"
     :projectText="'Project for Vervoerregio Amsterdam focusing on WCAG guidelines and the specific check ups between their partners.'"
+    :projectSpecsText="'Project Specifications: Sveltekit, Vervoerregio Amsterdam API and Hygraph.'"
     :seeMore="'https://github.com/WesleySchorel/lose-your-head-the-client-case'" />
 
     <Project :nameProject="'Schiphol Dashboard'" :imgUrl="'/img/devices-mockup-schiphol.png'"
-    :projectText="'Project for Vervoerregio Amsterdam focusing on WCAG guidelines and the specific check ups between their partners.'"
+    :projectText="'Dashboard made for Schiphol to visualize flights from Amsterdam to different destinations.'"
+    :projectSpecsText="'Project specifications: NodeJs, Express, Ejs, Schiphol API and datamaps D3.js.'"
     :seeMore="'https://github.com/Tolga1999/proof-of-concept'" />
 
     <Project :nameProject="'Groovy Search'" :imgUrl="'/img/iPhone15pro.png'"
-    :projectText="'Project for Vervoerregio Amsterdam focusing on WCAG guidelines and the specific check ups between their partners.'"
-    :seeMore="'https://github.com/Tolga1999/your-tribe-for-life-squad-page'" />
+    :projectText="'Fun little project to search your best friends at FDND!'" 
+    :projectSpecsText="'Project Specifications: unique design, Sveltekit and Prismic CMS.'" 
+    :seeMore="'https://github.com/Tolga1999/your-tribe-for-life-squad-page'"/>
 </template>
 
 <style>

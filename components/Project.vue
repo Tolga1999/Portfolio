@@ -11,6 +11,7 @@ const props = defineProps({
     imgUrl: String,
     projectText: String,
     seeMore: String,
+    projectSpecsText: String,
 })
 
 // client side scripting - lifecycle hook in script setup
@@ -39,6 +40,11 @@ onMounted(() => {
     })
 
     tl2.set(".p-project", {
+        opacity: 0,
+        yPercent: 100,
+    })
+
+    tl2.set(".specs-text", {
         opacity: 0,
         yPercent: 100,
     })
@@ -73,6 +79,12 @@ onMounted(() => {
         yPercent: 0,
     })
 
+    
+    tl2.to(".specs-text", {
+        opacity: 1,
+        yPercent: 0,
+    })
+
     tl2.to(".anchor-project", {
         opacity: 1,
         yPercent: 0,
@@ -93,6 +105,7 @@ onMounted(() => {
             <div>
                 <p class="p-project"> {{ projectText }}
                 </p>
+                <p class="specs-text">{{ projectSpecsText }}</p>
                 <a class="anchor-project" :href="seeMore">See more</a>
             </div>
         </article>
@@ -131,6 +144,10 @@ img {
 
 p {
     margin: 0;
+}
+
+.specs-text{
+    margin-top: 1em;
 }
 
 a {
