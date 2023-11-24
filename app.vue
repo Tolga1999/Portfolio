@@ -224,7 +224,7 @@ export default {
       <h3 class="contact-me-h3">Contact me</h3>
 
       <div class="logos">
-        <img class="linkedin-svg" src="svg/linkedin.svg" alt="linkedin logo">
+        <img class="linkedin-svg" src="svg/linkedin1.svg" alt="linkedin logo">
         <img class="twitter-svg" src="svg/twitter.svg" alt="twitter logo">
         <img class="instagram-svg" src="svg/instagram.svg" alt="instagram logo">
       </div>
