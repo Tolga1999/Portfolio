@@ -1,9 +1,6 @@
 <script setup>
 import { gsap } from "gsap";
-
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-import { onMounted} from 'vue';
 
 // /define props for component (properties)
 const props = defineProps({
@@ -34,22 +31,7 @@ onMounted(() => {
         yPercent: 500,
     })
 
-    tl2.set(".img-project", {
-        opacity: 0,
-        yPercent: 100,
-    })
-
-    tl2.set(".p-project", {
-        opacity: 0,
-        yPercent: 100,
-    })
-
-    tl2.set(".specs-text", {
-        opacity: 0,
-        yPercent: 100,
-    })
-
-    tl2.set(".anchor-project", {
+    tl2.set(".img-project, .p-project, .specs-text, .anchor-project", {
         opacity: 0,
         yPercent: 100,
     })
@@ -78,7 +60,6 @@ onMounted(() => {
         opacity: 1,
         yPercent: 0,
     })
-
     
     tl2.to(".specs-text", {
         opacity: 1,

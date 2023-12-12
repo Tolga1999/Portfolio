@@ -1,13 +1,11 @@
-<script>
+<script setup>
 import { gsap } from "gsap";
 
-export default {
-    mounted() {
-        gsap.fromTo(".anchor-tolga", { opacity: 0, yPercent: 100 }, { opacity: 1, yPercent: 0, duration: 0.5})
-        gsap.fromTo(".anchor-projects", { opacity: 0, yPercent: 100 }, { opacity: 1, yPercent: 0, duration: 0.5, delay: 0.5})
-        gsap.fromTo(".span-2023", { opacity: 0, yPercent: 100 }, { opacity: 1, yPercent: 0, duration: 0.5, delay: 1})
-    }
-}
+onMounted(() => {
+    gsap.fromTo(".anchor-tolga", { opacity: 0, yPercent: 100 }, { opacity: 1, yPercent: 0, duration: 0.5 })
+    gsap.fromTo(".anchor-projects", { opacity: 0, yPercent: 100 }, { opacity: 1, yPercent: 0, duration: 0.5, delay: 0.5 })
+    gsap.fromTo(".span-2023", { opacity: 0, yPercent: 100 }, { opacity: 1, yPercent: 0, duration: 0.5, delay: 1 })
+})
 </script>
 
 <template>

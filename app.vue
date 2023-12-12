@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted } from 'vue'
+// import { onMounted } from 'vue'
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
