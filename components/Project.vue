@@ -3,7 +3,7 @@ import { gsap } from "gsap";
 
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-import { onMounted, onUpdated} from 'vue';
+import { onMounted} from 'vue';
 
 // /define props for component (properties)
 const props = defineProps({

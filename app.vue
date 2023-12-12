@@ -1,13 +1,28 @@
-<script>
+<script setup>
+import { onMounted } from 'vue'
 import { gsap } from "gsap";
-
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-
-// client side scripting
 gsap.registerPlugin(ScrollTrigger);
-export default {
-  mounted() {
+
+// graphql query naar dato
+const QUERY = `
+{
+  allProjects {
+    name
+    image {
+      url
+    }
+    about
+    githubLink
+  }
+}
+`;
+
+// Next step using the data received from the function in my project
+const { data, error } = await useGraphqlQuery({ query: QUERY });
+
+  onMounted(() => {
     gsap.fromTo("h1", { opacity: 0, yPercent: 100 }, { opacity: 1, yPercent: 0, duration: 0.5, delay: 1.5 })
     gsap.fromTo(".circle-svg-1", { opacity: 0, yPercent: 50 }, { opacity: 1, yPercent: 0, duration: 1, delay: 2 })
     gsap.fromTo(".scroll-down", { opacity: 0, yPercent: 100 }, { opacity: 1, yPercent: 0, duration: 1, delay: 3 })
@@ -116,8 +131,7 @@ export default {
       yPercent: 0,
       stagger: 1,
     })
-  }
-}
+  })
 </script>
 
 <template>

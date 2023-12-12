@@ -2,5 +2,11 @@
 export default defineNuxtConfig({
   css: ['~/assets/css/global.css'],
   
-  devtools: { enabled: false }
+  devtools: { enabled: true },
+
+  runtimeConfig: {
+    public: {
+      datoCmsToken: process.env.DATO_CMS_TOKEN,
+    }
+  }
 })
