@@ -14,7 +14,7 @@ export default {
 
     let tl = gsap.timeline({
       scrollTrigger: {
-        trigger: ".creator-coder-h2",
+        trigger: ".second-section > h2",
         start: "top bottom",
         end: "250 30%",
         // markers: true,
@@ -37,56 +37,14 @@ export default {
       opacity: 1,
     })
 
-    tl.set(".creator-coder-h2", {
+    tl.set(".second-section > h2, .introduction-p, .contact-me-h3, .introduction-h3, .logos img, .worked-projects-h2", {
       opacity: 0,
       yPercent: 100,
     })
 
-    tl.set(".hr-first", {
+    tl.set(".hr-first, .hr-second", {
       width: "0",
       opacity: 0,
-    })
-
-    tl.set(".introduction-h3", {
-      opacity: 0,
-      yPercent: 100,
-      duration: 10,
-    })
-
-    tl.set(".introduction-p", {
-      opacity: 0,
-      yPercent: 100,
-    })
-
-    tl.set(".hr-second", {
-      width: "0",
-      opacity: 0,
-    })
-
-    tl.set(".contact-me-h3", {
-      opacity: 0,
-      yPercent: 100,
-    })
-
-    // logos
-    tl.set(".linkedin-svg", {
-      opacity: 0,
-      yPercent: 100,
-    })
-
-    tl.set(".twitter-svg", {
-      opacity: 0,
-      yPercent: 100,
-    })
-
-    tl.set(".instagram-svg", {
-      opacity: 0,
-      yPercent: 100,
-    })
-
-    tl2.set(".worked-projects-h2", {
-      opacity: 0,
-      yPercent: 100,
     })
 
     tl2.set(".second-circle-svg", {
@@ -94,13 +52,7 @@ export default {
       opacity: 0
     })
 
-    // github and scroll down - projects
-    tl2.set(".github-link", {
-      opacity: 0,
-      yPercent: 100,
-    })
-
-    tl2.set(".scroll-down-projects", {
+    tl2.set(".github-link, .scroll-down-projects", {
       opacity: 0,
       yPercent: 100,
     })
@@ -111,7 +63,7 @@ export default {
       delay: 2.5,
     })
 
-    tl.to(".creator-coder-h2", {
+    tl.to(".second-section > h2", {
       opacity: 1,
       yPercent: 0,
     })
@@ -121,14 +73,10 @@ export default {
       opacity: 1,
     })
 
-    tl.to(".introduction-h3", {
+    tl.to(".introduction-h3, .introduction-p", {
       opacity: 1,
       yPercent: 0,
-    })
-
-    tl.to(".introduction-p", {
-      opacity: 1,
-      yPercent: 0,
+      stagger: 1,
     })
 
     tl.to(".hr-second", {
@@ -141,19 +89,10 @@ export default {
       yPercent: 0,
     })
 
-    tl.to(".linkedin-svg", {
+    tl.to(".linkedin-svg, .twitter-svg, .instagram-svg", {
       opacity: 1,
       yPercent: 0,
-    })
-
-    tl.to(".twitter-svg", {
-      opacity: 1,
-      yPercent: 0,
-    })
-
-    tl.to(".instagram-svg", {
-      opacity: 1,
-      yPercent: 0,
+      stagger: 1,
     })
 
     tl2.to(".logos", {
@@ -172,16 +111,11 @@ export default {
     })
 
     // github and scroll down - projects
-    tl2.to(".github-link", {
+    tl2.to(".github-link, .scroll-down-projects", {
       opacity: 1,
       yPercent: 0,
+      stagger: 1,
     })
-
-    tl2.to(".scroll-down-projects", {
-      opacity: 1,
-      yPercent: 0,
-    })
-
   }
 }
 </script>
@@ -201,7 +135,7 @@ export default {
 
   <!-- second section -->
   <section class="second-section">
-    <h2 class="creator-coder-h2">Creator, Coder and Designer.</h2>
+    <h2>Creator, Coder and Designer.</h2>
     <hr class="hr-first">
 
     <article class="introduction-container">
@@ -209,7 +143,8 @@ export default {
 
       <div class="introduction-p">
         <p>
-          Hello! My name is Tolga, I’m 24 years old and I like to design and code projects in Vue.js, Sveltekit and Nuxt.js.
+          Hello! My name is Tolga, I’m 24 years old and I like to design and code projects in Vue.js, Sveltekit and
+          Nuxt.js.
         </p>
         <p>
           I’m a student at the Amsterdam University of Applied Sciences, in my last year and can’t wait to enter the
@@ -253,15 +188,15 @@ export default {
     :projectSpecsText="'Project Specifications: Sveltekit, Vervoerregio Amsterdam API and Hygraph.'"
     :seeMore="'https://github.com/WesleySchorel/lose-your-head-the-client-case'" />
 
-    <Project :nameProject="'Schiphol Dashboard'" :imgUrl="'/img/devices-mockup-schiphol.png'"
+  <Project :nameProject="'Schiphol Dashboard'" :imgUrl="'/img/devices-mockup-schiphol.png'"
     :projectText="'Dashboard made for Schiphol to visualize flights from Amsterdam to different destinations.'"
     :projectSpecsText="'Project specifications: NodeJs, Express, Ejs, Schiphol API and datamaps D3.js.'"
     :seeMore="'https://github.com/Tolga1999/proof-of-concept'" />
 
-    <Project :nameProject="'Groovy Search'" :imgUrl="'/img/iPhone15pro.png'"
-    :projectText="'Fun little project to search your best friends at FDND!'" 
-    :projectSpecsText="'Project Specifications: unique design, Sveltekit and Prismic CMS.'" 
-    :seeMore="'https://github.com/Tolga1999/your-tribe-for-life-squad-page'"/>
+  <Project :nameProject="'Groovy Search'" :imgUrl="'/img/iPhone15pro.png'"
+    :projectText="'Fun little project to search your best friends at FDND!'"
+    :projectSpecsText="'Project Specifications: unique design, Sveltekit and Prismic CMS.'"
+    :seeMore="'https://github.com/Tolga1999/your-tribe-for-life-squad-page'" />
 </template>
 
 <style>
@@ -288,7 +223,6 @@ section {
   width: 100%;
   max-width: 35em;
   padding-top: 5em;
-  /* transform: translateY(-1.5em); */
 }
 
 h1 {
@@ -312,7 +246,6 @@ h1 {
 /* second section */
 h2 {
   padding-bottom: 0.5em;
-  /* border-bottom: 3px solid var(--c-border-bottom); */
 }
 
 hr {
@@ -336,7 +269,6 @@ p {
 
 /* second article */
 .contact-me-container {
-  /* border-top: 3px solid var(--c-border-bottom); */
   flex-grow: 2;
   display: flex;
   flex-direction: column;
@@ -386,44 +318,45 @@ p {
 }
 
 @media (min-width: 725px) {
-  h1{
+  h1 {
     font-size: 6em;
   }
 
-  h2{
+  h2 {
     font-size: 4em;
   }
-  
-  .circle-svg-1{
+
+  .circle-svg-1 {
     scale: 1.1;
   }
-  h1{
+
+  h1 {
     align-self: flex-start;
     width: 50%;
-    line-height: 1em ;
+    line-height: 1em;
     transform: translateY(-2em);
   }
 
-  .scroll-down-homescreen{
+  .scroll-down-homescreen {
     transform: translateY(-14em);
   }
 
-  .creator-coder-h2{
+  .second-section>h2 {
     padding-top: 3em;
   }
 
-  .introduction-p p{
+  .introduction-p p {
     line-height: 1.5em;
     width: 50%;
   }
 
   /* second section */
-  .worked-projects-h2{
+  .worked-projects-h2 {
     align-self: flex-start;
     width: 50%;
   }
 
-  .second-circle-svg{
+  .second-circle-svg {
     display: none;
   }
 
